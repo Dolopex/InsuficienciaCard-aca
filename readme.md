@@ -41,3 +41,26 @@ pip install datasets
 3.2 Como agregado personal ajuste las columnas y los indices para que la informacion tenga una mejor presentacion
 
 3.3 Se imprimen los resultados
+
+## Notas Parte 4
+4.0 Se crea un nuevo archivo "download.py" en el que se cargan los datos mediante un GET requets
+
+4.0.1 Se importan las librerias requeridas "request" y "csv"
+
+4.0.2 Se crea una funcion que descargue y guarde los datos
+
+4.1 Se hace el get request para traer los datos desde url
+
+4.2 Se crea un codigo de status exitoso de la operacion (codigo 200)
+
+4.3 Si la operacion es exitosa, los datos se escriben en formato csv
+
+4.4 Se decodifica el contenido para que lo lea como un txt
+
+4.5 Se hacen condicionales que se impriman en la consola de acuerdo a si la operacion fue exitosa o fallida
+
+4.6 Se carga la url de donde se descargaran los datos
+
+4.7 Se le asigna un nombre al archivo csv
+
+4.8 Se llama a la funcion para descargar y guardar
