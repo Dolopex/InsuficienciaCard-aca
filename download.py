@@ -1,19 +1,55 @@
 import requests
-import csv
+import pandas as pd
+from io import StringIO
 
-def descargar_y_guardar_csv(url, nombre_archivo):
+def descargar_y_crear_dataframe(url):
     # GET request
     response = requests.get(url)
 
     # Verificar si la solicitud fue exitosa (código de estado 200)
     if response.status_code == 200:
-        # Escribe la respuesta en un archivo CSV
-        with open(nombre_archivo, 'w', newline='', encoding='utf-8') as archivo_csv:
-            # Decodificar el contenido de la respuesta como texto y escribirlo en el archivo
-            archivo_csv.write(response.text)
-        print(f"Descarga exitosa. Datos guardados en: '{nombre_archivo}'")
+        # Crear DataFrame desde el contenido de la respuesta
+        df = pd.read_csv(StringIO(response.text))
+        print("Descarga exitosa. DataFrame creado.")
+        return df
     else:
         print(f"Error al descargar los datos. Código de estado: {response.status_code}")
+        return None
+
+def limpiar_dataframe(df):
+    # Verificar valores faltantes
+    if df.isnull().values.any():
+        df = df.dropna()
+        print("Se eliminaron filas con valores faltantes.")
+
+    # Verificar filas repetidas
+    if df.duplicated().any():
+        df = df.drop_duplicates()
+        print("Se eliminaron filas duplicadas.")
+
+    # Verificar y eliminar valores atípicos 
+    # Aquí, se eliminan valores atípicos en la columna 'age' que están por encima de 100
+    df = df[df['age'] <= 100]
+    print("Se eliminaron valores repetidos.")
+
+    # Crear columna que categorice por edades
+    bins = [0, 12, 19, 39, 59, 150]  # Rangos de edades
+    labels = ['Niño', 'Adolescente', 'Jóvenes adulto', 'Adulto', 'Adulto mayor']
+    df['Categoria_Edad'] = pd.cut(df['age'], bins=bins, labels=labels, right=False)
+
+    return df
+
+def procesar_y_guardar_datos(url, nombre_archivo_csv):
+    # Descargar y crear DataFrame
+    df = descargar_y_crear_dataframe(url)
+
+    if df is not None:
+        # Limpiar DataFrame
+        df_limpiado = limpiar_dataframe(df)
+
+        # Guardar el resultado en "datos.csv"
+        df_limpiado.to_csv(nombre_archivo_csv, index=False)
+        print(f"Datos procesados y guardados en: '{nombre_archivo_csv}'")
 
 # URL de los datos
 url_datos = "https://huggingface.co/datasets/mstz/heart_failure/raw/main/heart_failure_clinical_records_dataset.csv"
@@ -21,5 +57,6 @@ url_datos = "https://huggingface.co/datasets/mstz/heart_failure/raw/main/heart_f
 # Nombre del archivo donde se guardarán los datos
 nombre_archivo_csv = "datos.csv"
 
-# Llamar a la función para descargar y guardar los datos
-descargar_y_guardar_csv(url_datos, nombre_archivo_csv)
+# Llamar a la función para procesar y guardar los datos
+procesar_y_guardar_datos(url_datos, nombre_archivo_csv)
+

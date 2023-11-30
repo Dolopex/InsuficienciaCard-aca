@@ -64,3 +64,13 @@ pip install datasets
 4.7 Se le asigna un nombre al archivo csv
 
 4.8 Se llama a la funcion para descargar y guardar
+
+## Parte 5
+
+5.0 Se importa  `StringIO` from `io` para crear un objeto StringIO para leer el contenido de texto de la respuesta HTTP.
+
+5.1 Se usaron tecnicas de procesamiento de datos para lllenar valores faltantes, verificar que no existan filas repetidas y que Verifique si existen valores atípicos para eliminarlos
+
+5.2 Se creó una columna con los que categoriza por edades
+
+5.3 Se encapsula todo y se guarda en "datos.csv"
