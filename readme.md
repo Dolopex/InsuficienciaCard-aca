@@ -1,4 +1,4 @@
-**#** Proyecto Integrador - Análisis de Datos de Insuficiencia Cardíaca
+**##** Proyecto Integrador - Análisis de Datos de Insuficiencia Cardíaca
 
 Este proyecto utiliza Python para analizar un conjunto de datos sobre insuficiencia cardíaca. El conjunto de datos contiene registros médicos de 299 pacientes durante un período de seguimiento. Las características clínicas incluyen información sobre edad, anemia, presión arterial alta, entre otras.
 
@@ -65,7 +65,7 @@ pip install datasets
 
 4.8 Se llama a la funcion para descargar y guardar
 
-## Parte 5
+## Notas Parte 5
 
 5.0 Se importa  `StringIO` from `io` para crear un objeto StringIO para leer el contenido de texto de la respuesta HTTP.
 
@@ -74,3 +74,33 @@ pip install datasets
 5.2 Se creó una columna con los que categoriza por edades
 
 5.3 Se encapsula todo y se guarda en "datos.csv"
+
+## Parte 6
+
+Funcionalidades Implementadas
+1. Descarga Automática de Datos
+Se implementó una función que utiliza la biblioteca requests para descargar automáticamente los datos desde una URL proporcionada como argumento de línea de comandos.
+2. Conversión a DataFrame y Operaciones de Limpieza
+Los datos descargados se convierten en un DataFrame de Pandas, permitiendo un manejo eficiente y versátil.
+Se aplicaron técnicas de limpieza de datos, eliminando filas con valores faltantes y duplicadas, y se eliminaron valores atípicos específicos.
+3. Categorización por Edades
+Se creó una nueva columna en el DataFrame que categoriza a los individuos según grupos de edad predefinidos.
+4. Exportación Automática a CSV
+El DataFrame resultante después del procesamiento se exporta automáticamente a un archivo CSV llamado "datos.csv".
+Uso del Script
+Para ejecutar el script procesar_datos.py, sigue estos pasos:
+
+Abre la terminal en la ubicación del script.
+Ejecuta el siguiente comando, reemplazando <URL_DATOS> con la URL específica de los datos que deseas procesar:
+bash
+Copy code
+python procesar_datos.py <URL_DATOS>
+
+## Notas Parte 6
+5.0 Se importó StringIO desde io para crear un objeto StringIO y leer el contenido de texto de la respuesta HTTP.
+
+5.1 Se utilizaron técnicas de procesamiento de datos para llenar valores faltantes, verificar la no existencia de filas repetidas y eliminar valores atípicos.
+
+5.2 Se creó una columna que categoriza por edades.
+
+5.3 Se encapsuló todo el proceso y se guardaron los resultados en el archivo "datos.csv".
