@@ -97,10 +97,10 @@ Copy code
 python procesar_datos.py <URL_DATOS>
 
 ## Notas Parte 6
-5.0 Se importó StringIO desde io para crear un objeto StringIO y leer el contenido de texto de la respuesta HTTP.
+6.0 Se importó StringIO desde io para crear un objeto StringIO y leer el contenido de texto de la respuesta HTTP.
 
-5.1 Se utilizaron técnicas de procesamiento de datos para llenar valores faltantes, verificar la no existencia de filas repetidas y eliminar valores atípicos.
+6.1 Se utilizaron técnicas de procesamiento de datos para llenar valores faltantes, verificar la no existencia de filas repetidas y eliminar valores atípicos.
 
-5.2 Se creó una columna que categoriza por edades.
+6.2 Se creó una columna que categoriza por edades.
 
-5.3 Se encapsuló todo el proceso y se guardaron los resultados en el archivo "datos.csv".
+6.3 Se encapsuló todo el proceso y se guardaron los resultados en el archivo "datos.csv".
