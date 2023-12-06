@@ -188,3 +188,43 @@ Se realizaron ajustes adicionales en el diseño, incluyendo el título general y
 
 9.8 Visualización
 Se mostró el gráfico interactivo de dispersión 3D con t-SNE.
+
+## Parte 10
+## Estimación de Edades mediante Regresión Lineal
+Este script en Python utiliza la regresión lineal para estimar edades en un conjunto de datos médicos. La funcionalidad clave incluye:
+
+## Descripción del Script
+Carga y Preprocesamiento de Datos
+Carga de Datos: Se carga un conjunto de datos desde un archivo CSV llamado 'datos.csv' utilizando la biblioteca pandas.
+
+Eliminación de Columnas: Las columnas 'DEATH_EVENT', 'age', y 'Categoria_Edad' se eliminan para formar la matriz X.
+
+Regresión Lineal y Estimación de Edades
+División de Datos: El conjunto de datos se divide en conjuntos de entrenamiento y prueba.
+
+Ajuste del Modelo: Se inicializa y ajusta un modelo de regresión lineal utilizando scikit-learn.
+
+Predicciones y Evaluación: Se realizan predicciones en el conjunto de prueba, y se calcula el error cuadrático medio (MSE) para evaluar el rendimiento del modelo.
+
+## Notas parte 10
+
+10.0 Carga del DataFrame
+El script comienza cargando el DataFrame desde el archivo CSV 'datos.csv' utilizando la biblioteca pandas.
+
+10.1 Eliminación de Columnas Innecesarias
+Las columnas 'DEATH_EVENT', 'age', y 'Categoria_Edad' son eliminadas para preparar la matriz X para la regresión lineal.
+
+10.2 División de Datos
+El conjunto de datos se divide en conjuntos de entrenamiento y prueba usando la función train_test_split de scikit-learn.
+
+10.3 Ajuste del Modelo de Regresión Lineal
+Se inicializa y ajusta un modelo de regresión lineal utilizando la clase LinearRegression de scikit-learn.
+
+10.4 Predicciones y Evaluación
+Se realizan predicciones en el conjunto de prueba y se calcula el Error Cuadrático Medio (MSE) para evaluar el rendimiento del modelo.
+
+10.5 Impresión del Resultado
+El MSE se imprime en la consola para proporcionar una medida cuantitativa del rendimiento del modelo.
+
+10.6 Comparación de Edades Reales y Predichas
+Un DataFrame de comparación ('comparacion_resultados') se crea para mostrar las edades reales y predichas en el conjunto de prueba.
