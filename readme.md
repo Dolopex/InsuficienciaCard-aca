@@ -104,3 +104,87 @@ python procesar_datos.py <URL_DATOS>
 6.2 Se creó una columna que categoriza por edades.
 
 6.3 Se encapsuló todo el proceso y se guardaron los resultados en el archivo "datos.csv".
+
+## Parte 7 , 8, 9
+Para esta seccion del proyecto, se realizaron análisis y visualizaciones de datos utilizando Matplotlib y plotly.express Se implementaron gráficos de barras,subplots,histogramas y 3d en Matplotlib para explorar distribuciones y relaciones dentro del conjunto de datos de insuficiencia cardíaca. 
+Asegúrate de tener instalada la biblioteca Matplotlib.
+
+```bash
+pip install matplotlib
+```
+y
+
+```bash
+pip install plotly pandas
+```
+
+## Notas parte 7
+
+7.0 Importación de Librerías
+Se importaron las librerías Pandas y Matplotlib para el manejo y visualización de datos.
+
+7.1 Carga del DataFrame
+Se cargó el DataFrame desde el archivo CSV exportado por el script de ETL.
+
+7.2 Histograma de Distribución de Edades
+Se creó un histograma para visualizar la distribución de edades en el conjunto de datos.
+
+7.3 Gráfico de Barras Agrupado por Género
+Se utilizó la función groupby para agrupar los datos por género y contar la cantidad de anémicos, diabéticos, fumadores y muertos.
+
+Configuración para graficar barras lado a lado.
+
+Se creó un gráfico de barras verticales agrupadas por género y categorías de interés como anémicos, diabéticos, fumadores y muertos.
+
+Configuración adicional y visualización del gráfico.
+
+## Notas parte 8
+
+8.0 Carga del DataFrame
+Se cargó el DataFrame desde el archivo CSV exportado por el script de ETL.
+
+8.1 Creación de Subplots
+Se crearon subplots con 2 filas y 2 columnas para alojar los gráficos de torta.
+
+8.2 Configuración de Categorías y Colores
+Se definieron las categorías de interés como 'anaemia', 'diabetes', 'smoking' y 'DEATH_EVENT'. También se establecieron colores y nombres para las categorías "Sí" y "No".
+
+8.3 Iteración y Creación de Gráficos de Torta
+Se utilizó un bucle para iterar sobre las categorías y calcular los porcentajes de distribución.
+
+Se crearon gráficos de torta en cada subplot, mostrando la proporción de "Sí" y "No" para cada categoría.
+
+8.4  Ajustes de Diseño
+Se realizaron ajustes de diseño para organizar y mostrar los gráficos de torta de manera clara y ordenada.
+
+8.5 Visualización
+Se ajustó el diseño de los subplots y se mostraron los gráficos de torta para las categorías de interés.
+
+## Notas parte 9
+
+9.0 Carga del DataFrame
+Se cargó el DataFrame desde el archivo CSV exportado por el script de ETL.
+
+9.1 Eliminación de Columnas no Necesarias
+Se eliminaron las columnas 'DEATH_EVENT' y 'Categoria_Edad', ya que no son necesarias para la reducción de dimensionalidad.
+
+9.2 Extracción de Vector Objetivo
+Se extrajo el vector objetivo ('DEATH_EVENT') y se almacenó en la variable 'y'.
+
+9.3 Aplicación de t-SNE para Reducción de Dimensionalidad
+Se utilizó la técnica t-SNE para reducir la dimensionalidad del conjunto de datos a tres dimensiones.
+
+9.4 Creación de DataFrame para la Visualización
+Se creó un DataFrame específico para la visualización, con las dimensiones reducidas ('X', 'Y', 'Z') y el vector objetivo ('DEATH_EVENT').
+
+9.5 Graficar Dispersión 3D con Plotly
+Se utilizó Plotly Express para crear un gráfico de dispersión tridimensional. La variable objetivo ('DEATH_EVENT') se utilizó para asignar colores a los puntos.
+
+9.6 Cambio del Título en la Barra Lateral Derecha
+Se actualizó el diseño del gráfico para cambiar el título en la barra lateral derecha, especificando "Muertos" como título.
+
+9.7 Configuración Adicional de Diseño
+Se realizaron ajustes adicionales en el diseño, incluyendo el título general y las etiquetas de los ejes.
+
+9.8 Visualización
+Se mostró el gráfico interactivo de dispersión 3D con t-SNE.
