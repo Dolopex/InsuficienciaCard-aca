@@ -4,10 +4,10 @@ Este proyecto utiliza Python para analizar un conjunto de datos sobre insuficien
 
 ## Instalación
 
-Para ejecutar este proyecto, asegúrate de tener instalada la librería `datasets` de Hugging Face:
+Para ejecutar este proyecto, asegúrate de instalar las librerias requeridas de "requirements.txt"
 
 ```bash
-pip install datasets
+pip install -r requirements.txt
 ```
 
 ## Notas Parte 1
