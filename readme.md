@@ -228,3 +228,41 @@ El MSE se imprime en la consola para proporcionar una medida cuantitativa del re
 
 10.6 Comparación de Edades Reales y Predichas
 Un DataFrame de comparación ('comparacion_resultados') se crea para mostrar las edades reales y predichas en el conjunto de prueba.
+
+## Parte 11
+Clasificación de Eventos de Muerte mediante Árbol de Decisión
+Este script en Python utiliza un árbol de decisión para clasificar eventos de muerte en un conjunto de datos médicos. A continuación, se describe la funcionalidad clave del script:
+
+## Notas Parte 11
+
+11.0 Carga del DataFrame
+El script comienza cargando el DataFrame desde el archivo CSV 'datos_procesados.csv' utilizando la biblioteca pandas.
+
+11.1 Eliminación de Columnas Innecesarias
+Se realiza la eliminación de la columna 'Categoria_Edad' para preparar el conjunto de datos para la clasificación mediante árbol de decisión.
+
+11.2 División de Datos
+El conjunto de datos se divide en conjuntos de entrenamiento y prueba utilizando la función train_test_split de scikit-learn.
+
+11.3 Ajuste del Modelo de Árbol de Decisión
+Se inicializa y ajusta un modelo de árbol de decisión utilizando la clase DecisionTreeClassifier de scikit-learn.
+
+11.4 Evaluación del Modelo
+Se realizan predicciones en el conjunto de prueba y se calcula el accuracy para evaluar el rendimiento del modelo.
+
+11.5 Impresión del Resultado
+El accuracy se imprime en la consola para proporcionar una medida cuantitativa del rendimiento del modelo.
+
+11.6 Graficar Distribución de Clases
+Se utiliza la función graficar_distribucion_clases para visualizar la distribución de clases en el conjunto de datos.
+
+## Parte 12
+Esta parte del codigo realiza tareas de clasificación utilizando Árboles de Decisión y Random Forest en un conjunto de datos. A continuación, se resumen las principales funciones:
+
+1. Clasificación con Árbol de Decisión
+La función clasificacion_decision_tree(X, y) ajusta un modelo de Árbol de Decisión y calcula la precisión en el conjunto de prueba.
+2. Clasificación con Random Forest
+La función clasificacion_random_forest(X, y) ajusta un modelo de Random Forest y calcula precisión, matriz de confusión y F1-Score en el conjunto de prueba.
+3. Visualización de la Distribución de Clases
+La función graficar_distribucion_clases(y) crea un histograma para visualizar la distribución de clases.
+
